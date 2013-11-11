@@ -192,4 +192,8 @@
     <!-- Fingerprint vibration -->
     <string name="fprint_sucess_vib_title">Вибрация при распознавании отпечатка пальцев</string>
     <string name="fprint_sucess_vib_summary">Вибрировать при успешном распознавании отпечатка пальцев</string>
+
+    <!-- setting: show CPU info-->
+    <string name="show_cpu_info">Показывать информацию о процессоре</string>
+    <string name="show_cpu_info_summary">Накладываемый слой, показывающий текущую информацию о процессоре</string>
 </resources>
