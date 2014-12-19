@@ -196,4 +196,14 @@
     <!-- setting: show CPU info-->
     <string name="show_cpu_info">Показати інформацію про ЦП</string>
     <string name="show_cpu_info_summary">Накладання на екран поточної інформації процесора</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Вибір кольору</string>
+    <string name="press_color_to_apply">ННатисніть на колір для вибору</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">Встановити</string>
+    <string name="color_default">Заз замовчуванням</string>
 </resources>
