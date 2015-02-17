@@ -143,4 +143,7 @@
 
     <!-- Screenshot sound -->
     <string name="screenshot_sound_title">Звук скріншота</string>
+
+    <string name="interruptions_ignore_while_media_title">Вимкнути згасання звуку</string>
+    <string name="interruptions_ignore_while_media_summary">Не приглушати гучність мультимедіа при надходженні повідомлень</string>
 </resources>
