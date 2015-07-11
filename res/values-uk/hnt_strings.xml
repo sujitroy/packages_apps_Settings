@@ -17,4 +17,14 @@
     <!-- Development Settings -->
     <!-- Dev Options Enabled by Default -->
     <string name="show_dev_already_enabled">Налаштування для розробників увімкнуті за замовчуванням.</string>
+
+    <!-- Volume Steps -->
+    <string name="volume_steps_title">Рівні гучності</string>
+    <string name="volume_steps_alarm_title">Рівень гучності: Будильник</string>
+    <string name="volume_steps_dtmf_title">Рівень гучності: Набір номера</string>
+    <string name="volume_steps_music_title">Рівень гучності: Музика</string>
+    <string name="volume_steps_notification_title">Рівень гучності: Сповіщення</string>
+    <string name="volume_steps_ring_title">Рівень гучності: Дзвінок</string>
+    <string name="volume_steps_system_title">Рівень гучності: Система</string>
+    <string name="volume_steps_voice_call_title">Рівень гучності: Голосовий виклик</string>
 </resources>
