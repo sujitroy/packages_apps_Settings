@@ -122,6 +122,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final int PASSWORD_INVISIBLE = 0;
 
     private static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
+    private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
 
     // These switch preferences need special handling since they're not all stored in Settings.
     private static final String SWITCH_PREFERENCE_KEYS[] = {
@@ -148,6 +149,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private SwitchPreference mShowPassword;
 
     private SwitchPreference mFpKeystore;
+    private SwitchPreference mFingerprintVib;
 
     private KeyStore mKeyStore;
     private RestrictedPreference mResetCredentials;
@@ -390,6 +392,19 @@ public class SecuritySettings extends SettingsPreferenceFragment
                 mFpKeystore.setOnPreferenceChangeListener(this);
             } else {
                 securityCategory.removePreference(mFpKeystore);
+            }
+        }
+
+        FingerprintManager fpm =
+                (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+        mFingerprintVib = (SwitchPreference) findPreference(FINGERPRINT_VIB);
+        if (mFingerprintVib !=null) {
+            if (fpm != null && fpm.isHardwareDetected()){
+                mFingerprintVib.setChecked((Settings.System.getInt(getContentResolver(),
+                        Settings.System.FINGERPRINT_SUCCESS_VIB, 1) == 1));
+                mFingerprintVib.setOnPreferenceChangeListener(this);
+            } else {
+                securityCategory.removePreference(mFingerprintVib);
             }
         }
 
@@ -834,6 +849,9 @@ public class SecuritySettings extends SettingsPreferenceFragment
             lockPatternUtils.setVisiblePasswordEnabled((Boolean) value, MY_USER_ID);
         } else if (FP_UNLOCK_KEYSTORE.equals(key)) {
             Settings.System.putInt(getContentResolver(), Settings.System.FP_UNLOCK_KEYSTORE, 
+                    ((Boolean) value) ? 1 : 0);
+        } else if (FINGERPRINT_VIB.equals(key)) {
+            Settings.System.putInt(getContentResolver(), Settings.System.FINGERPRINT_SUCCESS_VIB,
                     ((Boolean) value) ? 1 : 0);
         } else if (KEY_TOGGLE_INSTALL_APPLICATIONS.equals(key)) {
             if ((Boolean) value) {

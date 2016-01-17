@@ -188,4 +188,8 @@
     <string name="keyboard_rotation_dialog">Ця функція примусово вмикає автоповорот під час відображення клавіатури і не має ефекту, коли автоповорот вже увімкнений.</string>
     <string name="show_enter_key_title">Показувати кнопку введення</string>
     <string name="show_enter_key_summary">Примусово показувати кнопку введення замість кнопки смайлів</string>
+
+    <!-- Fingerprint vibration -->
+    <string name="fprint_sucess_vib_title">Вібрація при  розпізнаванні відбитку пальця</string>
+    <string name="fprint_sucess_vib_summary">Вібрувати при успішному розпізнаванні відбитку пальця</string>
 </resources>
