@@ -54,4 +54,7 @@
     <string name="timeout_1500">1,5 seconds</string>
     <string name="timeout_1000">1 second</string>
     <string name="timeout_500">0,5 second</string>
+
+    <!-- Phone info shortcut -->
+    <string name="device_info_title">Phone info</string>
 </resources>
