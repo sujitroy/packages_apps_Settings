@@ -57,4 +57,7 @@
 
     <!-- Phone info shortcut -->
     <string name="device_info_title">Phone info</string>
+
+    <string name="ambient_display_show_battery_title">Статус батареи</string>
+    <string name="ambient_display_show_battery_summary">Показывать значок батареи во время пульсации</string>
 </resources>

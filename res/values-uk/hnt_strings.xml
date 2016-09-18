@@ -50,4 +50,7 @@
 
     <!-- Phone info shortcut -->
     <string name="device_info_title">Інформація телефону</string>
+
+    <string name="ambient_display_show_battery_title">Стан батареї</string>
+    <string name="ambient_display_show_battery_summary">Показувати індикатор батареї під час пульсації</string>
 </resources>
