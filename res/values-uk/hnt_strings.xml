@@ -175,4 +175,17 @@
     <string name="incall_vibrate_connect_title">Вібрувати при відповіді</string>
     <string name="incall_vibrate_call_wait_title">Вібрувати при очікуванні виклику</string>
     <string name="incall_vibrate_disconnect_title">Вібрувати при завершені</string>
+
+    <!-- Keyboard and Input ASS methods  -->
+    <string name="attention">Увага</string>
+    <string name="title_keyboard_input">Розширені налаштування</string>
+    <string name="disable_fullscreen_keyboard_title">Вимкнути повноекранну клавіатуру</string>
+    <string name="disable_fullscreen_keyboard_summary">Клавіатура в альбомній орієнтації не буде займати весь екран</string>
+    <string name="keyboard_rotation_toggle_title">Автоповорот клавіатури</string>
+    <string name="keyboard_rotation_toggle_summary">Примусово вмикати автоповорот, коли відображається клавіатура</string>
+    <string name="keyboard_rotation_timeout_title">Тайм-аут автоповороту</string>
+    <string name="keyboard_rotation_timeout_summary">Вимкнути сенсор автоповороту після <xliff:g id="rotate_timeout">%1$s</xliff:g> секунд, як клавіатура прихована</string>
+    <string name="keyboard_rotation_dialog">Ця функція примусово вмикає автоповорот під час відображення клавіатури і не має ефекту, коли автоповорот вже увімкнений.</string>
+    <string name="show_enter_key_title">Показувати кнопку введення</string>
+    <string name="show_enter_key_summary">Примусово показувати кнопку введення замість кнопки смайлів</string>
 </resources>
