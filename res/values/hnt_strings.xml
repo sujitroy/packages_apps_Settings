@@ -162,4 +162,9 @@
     <!-- Camera sound -->
     <string name="camera_sounds_title">Camera shutter sound</string>
     <string name="camera_sounds_summary">Disabling may not work on 3rd party camera apps and in HDR+ mode</string>
+
+    <!-- Optional screenshot type -->
+    <string name="screenshot_type_title">Screenshot type</string>
+    <string name="screenshot_type_fullscreen">Take fullscreen screenshots</string>
+    <string name="screenshot_type_partial">Drag selection on the area you want to take as a screenshot</string>
 </resources>

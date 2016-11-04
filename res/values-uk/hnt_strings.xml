@@ -154,4 +154,9 @@
     <!-- Camera sound -->
     <string name="camera_sounds_title">Звук затвору камери</string>
     <string name="camera_sounds_summary">Вимкнення може не працювати на сторонніх додатках камери і в режимі HDR+</string>
+
+    <!-- Optional screenshot type -->
+    <string name="screenshot_type_title">Тип скріншоту</string>
+    <string name="screenshot_type_fullscreen">Повноекранний скріншот</string>
+    <string name="screenshot_type_partial">Вибір області екрану для часткового скріншоту</string>
 </resources>

@@ -100,6 +100,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
 
+    private static final String SCREENSHOT_TYPE = "screenshot_type";
+
     private Preference mFontSizePref;
 
     private TimeoutListPreference mScreenTimeoutPreference;
@@ -111,6 +113,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mAutoBrightnessPreference;
     private SwitchPreference mCameraGesturePreference;
     private ListPreference mRecentsClearAllLocation;
+    private ListPreference mScreenshotType;
 
     private ThemePreference mThemePreference;
 
@@ -285,6 +288,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mRecentsClearAllLocation.setValue(String.valueOf(location));
         mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
         mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
+
+        mScreenshotType = (ListPreference) findPreference(SCREENSHOT_TYPE);
+        int mScreenshotTypeValue = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.SCREENSHOT_TYPE, 0);
+        mScreenshotType.setValue(String.valueOf(mScreenshotTypeValue));
+        mScreenshotType.setSummary(mScreenshotType.getEntry());
+        mScreenshotType.setOnPreferenceChangeListener(this);
 
         mThemePreference = (ThemePreference) findPreference(KEY_THEME);
         if (mThemePreference != null) {
@@ -511,6 +521,15 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.RECENTS_CLEAR_ALL_LOCATION, location, UserHandle.USER_CURRENT);
             mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
+            return true;
+        }
+        if (preference == mScreenshotType) {
+            int mScreenshotTypeValue = Integer.parseInt(((String) objValue).toString());
+            mScreenshotType.setSummary(
+                    mScreenshotType.getEntries()[mScreenshotTypeValue]);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.SCREENSHOT_TYPE, mScreenshotTypeValue);
+            mScreenshotType.setValue(String.valueOf(mScreenshotTypeValue));
             return true;
         }
 
