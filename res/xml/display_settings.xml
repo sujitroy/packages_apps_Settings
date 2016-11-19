@@ -208,6 +208,11 @@
             android:defaultValue="3"
             android:dependency="show_clear_all_recents" />
 
+        <Preference
+            android:key="blur"
+            android:title="@string/settings_blur_cat"
+            android:fragment="com.android.settings.hnt.BlurPersonalizations" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
