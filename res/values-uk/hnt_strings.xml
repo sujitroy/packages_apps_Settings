@@ -61,4 +61,26 @@
     <string name="ambient_doze_custom_brightness_title">Яскравість екрану при активації</string>
     <string name="ambient_doze_auto_brightness_title">Автоматична яскравість екрану при активації</string>
     <string name="ambient_doze_auto_brightness_summary">Використовувати останнє значення яскравості екрану при його активації</string>
+
+    <!-- Color engine -->
+    <string name="theme_switch_palette">Перемкнутись між кольором фону та акценту</string>
+    <string name="theme_title">Палітра</string>
+    <string name="theme_summary">Оберіть різні кольори для поточної теми</string>
+    <string name="theme_accent_color">Колір акценту</string>
+    <string name="theme_primary_color">Колір фону</string>
+    <string name="theme">Тема</string>
+    <string name="oms_enabled">Теми недоступні, оскільки активна тема Substratum</string>
+    <string name="red">Червоний</string>
+    <string name="orange">Помаранчевий</string>
+    <string name="blue">Морський</string>
+    <string name="green">Зелений</string>
+    <string name="yellow">Жовтий</string>
+    <string name="purple">Фіолетовий</string>
+    <string name="pink">Рожевий</string>
+    <string name="dark">Темний</string>
+    <string name="pixel">Піксель</string>
+    <string name="teal">Синій</string>
+    <string name="cyan">Блакитний</string>
+    <string name="grey">Сірий</string>
+    <string name="default_string">За замовчуванням</string>
 </resources>

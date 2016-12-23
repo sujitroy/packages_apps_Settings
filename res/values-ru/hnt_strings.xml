@@ -61,4 +61,26 @@
     <string name="ambient_doze_custom_brightness_title">Яркость экрана при активации</string>
     <string name="ambient_doze_auto_brightness_title">Автоматическая яркость экрана при активации</string>
     <string name="ambient_doze_auto_brightness_summary">Использовать последнее значение яркости экрана при его активации</string>
+
+    <!-- Color engine -->
+    <string name="theme_switch_palette">Переключение между основным и дополнительным цветом</string>
+    <string name="theme_title">Цветовая схема</string>
+    <string name="theme_summary">Выберите различные цвета для вашей текущей темы</string>
+    <string name="theme_accent_color">Контрастный цвет</string>
+    <string name="theme_primary_color">Цвет фона</string>
+    <string name="theme">Темы</string>
+    <string name="oms_enabled">Режимы тем недоступны, потому что в настоящее время применяется тема Substratum</string>
+    <string name="red">Красный</string>
+    <string name="orange">Оранжевый</string>
+    <string name="blue">Бирюзовый</string>
+    <string name="green">Зеленый</string>
+    <string name="yellow">Желтый</string>
+    <string name="purple">Фиолетовый</string>
+    <string name="pink">Розовый</string>
+    <string name="dark">Темный</string>
+    <string name="pixel">Пиксель</string>
+    <string name="teal">Синий</string>
+    <string name="cyan">Голубой</string>
+    <string name="grey">Серый</string>
+    <string name="default_string">По умолчанию</string>
 </resources>
