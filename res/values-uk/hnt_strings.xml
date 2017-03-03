@@ -146,4 +146,8 @@
 
     <string name="interruptions_ignore_while_media_title">Вимкнути згасання звуку</string>
     <string name="interruptions_ignore_while_media_summary">Не приглушати гучність мультимедіа при надходженні повідомлень</string>
+
+    <!-- Disable FC notifications -->
+    <string name="disable_fc_notifications_title">Вимкнути сповіщення про помилки</string>
+    <string name="disable_fc_notifications_summary">Приховати всі сповіщення про помилки</string>
 </resources>

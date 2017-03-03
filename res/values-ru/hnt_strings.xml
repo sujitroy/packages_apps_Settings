@@ -146,4 +146,8 @@
 
     <string name="interruptions_ignore_while_media_title">Отключить затухание звука</string>
     <string name="interruptions_ignore_while_media_summary">Не приглушать громкость мультимедиа при поступлении уведомлений</string>
+
+    <!-- Disable FC notifications -->
+    <string name="disable_fc_notifications_title">Отключить уведомления об ошибках</string>
+    <string name="disable_fc_notifications_summary">Скрывать все уведомления об ошибках</string>
 </resources>
