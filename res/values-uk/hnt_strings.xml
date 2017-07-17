@@ -118,4 +118,10 @@
     <string name="menu_stats_reset">Скидання статистики</string>
     <!-- Reset stats confirmation dialog's message -->
     <string name="reset_stats_msg">Історія статистики батареї буде скинута</string>
+
+    <!-- Fingerprint unlock keystore -->
+    <string name="fp_unlock_keystore_title">Розблокувати відбитком пальця</string>
+    <string name="fp_unlock_password_summary">Розблокувати пристрій за допомогою відбитка пальця після перезавантаження без паролю</string>
+    <string name="fp_unlock_pattern_summary">Розблокувати пристрій за допомогою відбитка пальця після перезавантаження без ключа</string>
+    <string name="fp_unlock_pin_summary">Розблокувати пристрій за допомогою відбитка пальця після перезавантаження без PIN-коду</string>
 </resources>
