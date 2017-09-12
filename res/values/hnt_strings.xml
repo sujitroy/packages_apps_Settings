@@ -34,4 +34,13 @@
     <string name="volume_steps_15" translatable="false">15</string>
     <string name="volume_steps_7" translatable="false">7</string>
     <string name="volume_steps_5" translatable="false">5</string>
+
+    <!-- Selinux Switch -->
+    <string name="selinux_switch_cat_title">SELinux Switch</string>
+    <string name="selinux_switch_title">SELinux info</string>
+    <string name="selinux_switch_summary">SELinux is a set of kernel modifications and user-space tools. Changing modes can cause unwanted effects. Requires root permission. Use at your own risk.</string>
+    <string name="selinux_title">SELinux Mode</string>
+    <string name="selinux_permissive_title">Permissive</string>
+    <string name="selinux_enforcing_title">Enforcing</string>
+    <string name="selinux_permissive_toast_title">SELinux mode set to permissive!</string>
 </resources>

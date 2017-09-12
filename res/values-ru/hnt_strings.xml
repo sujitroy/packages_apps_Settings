@@ -27,4 +27,13 @@
     <string name="volume_steps_ring_title">Уровень громкости: Звонок</string>
     <string name="volume_steps_system_title">Уровень громкости: Система</string>
     <string name="volume_steps_voice_call_title">Уровень громкости: Голосовой вызов</string>
+
+    <!-- Selinux Switch -->
+    <string name="selinux_switch_cat_title">Переключатель SELinux</string>
+    <string name="selinux_switch_title">Информация про SELinux</string>
+    <string name="selinux_switch_summary">SELinux это набор модификаций ядра и инструментов пользовательского пространства. Изменение режимов может привести к нежелательным последствиям. Используйте на свой риск.</string>
+    <string name="selinux_title">Режим SELinux</string>
+    <string name="selinux_permissive_title">Только предупреждение</string>
+    <string name="selinux_enforcing_title">Блокировка</string>
+    <string name="selinux_permissive_toast_title">SELinux в режиме: Только предупреждение!</string>
 </resources>

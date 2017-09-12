@@ -445,4 +445,21 @@
             android:summary="@string/kill_app_longpress_back_summary"/>
      </PreferenceCategory>
 
+     <PreferenceCategory
+         android:title="@string/selinux_switch_cat_title">
+
+     <!-- SELinux -->
+     <Preference
+         android:key="selinux_switch"
+         android:title="@string/selinux_switch_title"
+         android:summary="@string/selinux_switch_summary"
+         android:selectable="false"/>
+
+     <SwitchPreference
+         android:key="selinux"
+         android:title="@string/selinux_title"
+         android:defaultValue="false" />
+
+     </PreferenceCategory>
+
 </PreferenceScreen>
