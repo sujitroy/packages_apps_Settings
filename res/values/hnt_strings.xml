@@ -43,4 +43,8 @@
     <string name="selinux_permissive_title">Permissive</string>
     <string name="selinux_enforcing_title">Enforcing</string>
     <string name="selinux_permissive_toast_title">SELinux mode set to permissive!</string>
+
+    <!-- USB mode dialog -->
+    <string name="usb_mode_dialog_show_title">Show USB mode dialog</string>
+    <string name="usb_mode_dialog_show_summary">Shows a chooser dialog when your device is connected to PC via USB</string>
 </resources>

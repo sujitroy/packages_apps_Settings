@@ -36,4 +36,8 @@
     <string name="selinux_permissive_title">Право на доступ</string>
     <string name="selinux_enforcing_title">Примусово</string>
     <string name="selinux_permissive_toast_title">SELinux в режиме: Право на доступ!</string>
+
+    <!-- USB mode dialog -->
+    <string name="usb_mode_dialog_show_title">Показувати діалог вибору режиму USB</string>
+    <string name="usb_mode_dialog_show_summary">"Показує діалог вибору режиму, коли пристрій підключається до комп'ютера через USB"</string>
 </resources>

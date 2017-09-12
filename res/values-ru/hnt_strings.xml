@@ -36,4 +36,8 @@
     <string name="selinux_permissive_title">Только предупреждение</string>
     <string name="selinux_enforcing_title">Блокировка</string>
     <string name="selinux_permissive_toast_title">SELinux в режиме: Только предупреждение!</string>
+
+    <!-- USB mode dialog -->
+    <string name="usb_mode_dialog_show_title">Показывать диалог выбора режима USB</string>
+    <string name="usb_mode_dialog_show_summary">Показывает диалог выбора режима, когда устройство подключается к компьютеру через USB</string>
 </resources>
