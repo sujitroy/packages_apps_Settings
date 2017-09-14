@@ -53,4 +53,7 @@
 
     <string name="ambient_display_show_battery_title">Стан батареї</string>
     <string name="ambient_display_show_battery_summary">Показувати індикатор батареї під час пульсації</string>
+
+    <string name="no_sim_cluster_switch_title">Приховати неактивну мережу</string>
+    <string name="no_sim_cluster_switch_summary">Приховати панель мережі, якщо sim-карта неактивна і вимкнена. Якщо sim-карту не вимкнуто, ця опція не працюватиме</string>
 </resources>

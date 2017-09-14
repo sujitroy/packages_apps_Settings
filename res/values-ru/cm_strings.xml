@@ -420,11 +420,11 @@
   <string name="sim_enabler_airplane_on">Выполнение операции невозможно при включённом режиме полёта.</string>
   <string name="sim_enabler_in_call">Выполнение операции невозможно во время вызова.</string>
   <string name="sim_enabler_both_inactive">Невозможно отключить все SIM-карты</string>
-  <string name="sim_enabler_enabling">Включение\u2026</string>
-  <string name="sim_enabler_disabling">Отключение\u2026</string>
+  <string name="sim_enabler_enabling">Включение\u2026 Переключатель скрытия неактивной сети выключен</string>
+  <string name="sim_enabler_disabling">Отключение\u2026 Переключатель скрытия неактивной сети выключен</string>
   <string name="sub_activate_success">SIM-карта включена.</string>
   <string name="sub_activate_failed">Ошибка при включении.</string>
-  <string name="sub_deactivate_success">SIM-карта отключена.</string>
+  <string name="sub_deactivate_success">SIM-карта отключена. Чтобы скрыть значок, воспользуйтесь соответствующим переключателем, который расположен ниже</string>
   <string name="sub_deactivate_failed">Ошибка при отключении.</string>
   <!-- About phone settings screen, setting option dialog title to show regulatory information [CHAR LIMIT=25] -->
   <!-- SAR information -->

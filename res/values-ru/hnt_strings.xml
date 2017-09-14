@@ -53,4 +53,7 @@
 
     <string name="ambient_display_show_battery_title">Статус батареи</string>
     <string name="ambient_display_show_battery_summary">Показывать значок батареи во время пульсации</string>
+
+    <string name="no_sim_cluster_switch_title">Скрыть неактивную сеть</string>
+    <string name="no_sim_cluster_switch_summary">Скрыть панель сети, если sim-карта неактивна и выключена. Если sim-карта не выключена, эта опция не будет работать</string>
 </resources>
