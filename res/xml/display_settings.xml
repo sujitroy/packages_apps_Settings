@@ -106,6 +106,18 @@
             <intent android:action="org.cyanogenmod.settings.device.DOZE_SETTINGS" />
         </cyanogenmod.preference.RemotePreference>
 
+        <com.android.settings.hnt.CustomSeekBarPreference
+                android:key="ambient_doze_custom_brightness"
+                android:title="@string/ambient_doze_custom_brightness_title"
+                settings:max="255"
+                settings:units=""
+                android:persistent="false" />
+
+        <SwitchPreference
+                android:key="ambient_doze_auto_brightness"
+                android:title="@string/ambient_doze_auto_brightness_title"
+                android:summary="@string/ambient_doze_auto_brightness_summary" />
+
         <cyanogenmod.preference.CMGlobalSettingSwitchPreference
                 android:key="wake_when_plugged_or_unplugged"
                 android:title="@string/wake_when_plugged_or_unplugged_title"

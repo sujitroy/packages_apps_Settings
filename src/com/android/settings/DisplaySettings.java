@@ -56,6 +56,8 @@ import com.android.settings.search.Indexable;
 import com.android.settingslib.RestrictedLockUtils;
 import com.android.settingslib.RestrictedPreference;
 
+import com.android.settings.hnt.CustomSeekBarPreference;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -95,11 +97,16 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_WALLPAPER = "wallpaper";
     private static final String KEY_VR_DISPLAY_PREF = "vr_display_pref";
 
+    private static final String AMBIENT_DOZE_AUTO_BRIGHTNESS = "ambient_doze_auto_brightness";
+    private static final String AMBIENT_DOZE_CUSTOM_BRIGHTNESS = "ambient_doze_custom_brightness";
+
     private Preference mFontSizePref;
 
+    private CustomSeekBarPreference mAmbientDozeCustomBrightness;
     private TimeoutListPreference mScreenTimeoutPreference;
     private ListPreference mNightModePreference;
     private Preference mScreenSaverPreference;
+    private SwitchPreference mAmbientDozeAutoBrightness;
     private SwitchPreference mLiftToWakePreference;
     private SwitchPreference mDozePreference;
     private SwitchPreference mTapToWakePreference;
@@ -268,6 +275,32 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             final int currentNightMode = uiManager.getNightMode();
             mNightModePreference.setValue(String.valueOf(currentNightMode));
             mNightModePreference.setOnPreferenceChangeListener(this);
+        }
+
+        if (isDozeAvailable(activity)) {
+            mAmbientDozeCustomBrightness = (CustomSeekBarPreference) findPreference(AMBIENT_DOZE_CUSTOM_BRIGHTNESS);
+            int minValue = getResources().getInteger(
+                    com.android.internal.R.integer.config_screenBrightnessSettingMinimum);
+            int defaultValue = getResources().getInteger(
+                    com.android.internal.R.integer.config_screenBrightnessDoze);
+            int brightness = Settings.System.getIntForUser(resolver,
+                    Settings.System.AMBIENT_DOZE_CUSTOM_BRIGHTNESS, defaultValue, UserHandle.USER_CURRENT);
+            mAmbientDozeCustomBrightness.setMin(minValue);
+            mAmbientDozeCustomBrightness.setValue(brightness);
+            mAmbientDozeCustomBrightness.setOnPreferenceChangeListener(this);
+
+            mAmbientDozeAutoBrightness = (SwitchPreference) findPreference(AMBIENT_DOZE_AUTO_BRIGHTNESS);
+            boolean defaultAmbientDozeAutoBrighthness = getResources().getBoolean(
+                    com.android.internal.R.bool.config_allowAutoBrightnessWhileDozing);
+            boolean isAmbientDozeAutoBrighthness = Settings.System.getIntForUser(resolver,
+                    Settings.System.AMBIENT_DOZE_AUTO_BRIGHTNESS, defaultAmbientDozeAutoBrighthness ? 1 : 0,
+                    UserHandle.USER_CURRENT) == 1;
+            mAmbientDozeAutoBrightness.setChecked(isAmbientDozeAutoBrighthness);
+            mAmbientDozeAutoBrightness.setOnPreferenceChangeListener(this);
+            mAmbientDozeCustomBrightness.setEnabled(!isAmbientDozeAutoBrighthness);
+        } else {
+            removePreference(AMBIENT_DOZE_CUSTOM_BRIGHTNESS);
+            removePreference(AMBIENT_DOZE_AUTO_BRIGHTNESS);
         }
     }
 
@@ -458,6 +491,17 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             } catch (NumberFormatException e) {
                 Log.e(TAG, "could not persist night mode setting", e);
             }
+        }
+        if (preference == mAmbientDozeCustomBrightness) {
+            int brightness = (Integer) objValue;
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.AMBIENT_DOZE_CUSTOM_BRIGHTNESS, brightness, UserHandle.USER_CURRENT);
+        }
+        if (preference == mAmbientDozeAutoBrightness) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.AMBIENT_DOZE_AUTO_BRIGHTNESS, value ? 1 : 0, UserHandle.USER_CURRENT);
+            mAmbientDozeCustomBrightness.setEnabled(!value);
         }
         return true;
     }

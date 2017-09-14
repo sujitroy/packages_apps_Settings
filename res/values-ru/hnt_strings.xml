@@ -56,4 +56,9 @@
 
     <string name="no_sim_cluster_switch_title">Скрыть неактивную сеть</string>
     <string name="no_sim_cluster_switch_summary">Скрыть панель сети, если sim-карта неактивна и выключена. Если sim-карта не выключена, эта опция не будет работать</string>
+
+    <!-- Ambient Display Brightness -->
+    <string name="ambient_doze_custom_brightness_title">Яркость экрана при активации</string>
+    <string name="ambient_doze_auto_brightness_title">Автоматическая яркость экрана при активации</string>
+    <string name="ambient_doze_auto_brightness_summary">Использовать последнее значение яркости экрана при его активации</string>
 </resources>

@@ -56,4 +56,9 @@
 
     <string name="no_sim_cluster_switch_title">Приховати неактивну мережу</string>
     <string name="no_sim_cluster_switch_summary">Приховати панель мережі, якщо sim-карта неактивна і вимкнена. Якщо sim-карту не вимкнуто, ця опція не працюватиме</string>
+
+    <!-- Ambient Display Brightness -->
+    <string name="ambient_doze_custom_brightness_title">Яскравість екрану при активації</string>
+    <string name="ambient_doze_auto_brightness_title">Автоматична яскравість екрану при активації</string>
+    <string name="ambient_doze_auto_brightness_summary">Використовувати останнє значення яскравості екрану при його активації</string>
 </resources>
