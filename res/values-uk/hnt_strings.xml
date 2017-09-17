@@ -83,4 +83,9 @@
     <string name="cyan">Блакитний</string>
     <string name="grey">Сірий</string>
     <string name="default_string">За замовчуванням</string>
+
+    <string name="quick_unlock_warning">Попередження</string>
+    <string name="quick_unlock_warning_summary">Дана можливість обходить важливий захисний механізм та погано впливає на підтримку кількох користувачів на пристрої. Використовуйте на свій ризик</string>
+    <string name="unlock_quick_unlock_control_title">Швидке розблокування</string>
+    <string name="unlock_quick_unlock_control_summary">Автоматичне розблокування при введенні вірного паролю або PIN-коду</string>
 </resources>

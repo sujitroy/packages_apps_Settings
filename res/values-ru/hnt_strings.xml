@@ -83,4 +83,9 @@
     <string name="cyan">Голубой</string>
     <string name="grey">Серый</string>
     <string name="default_string">По умолчанию</string>
+
+    <string name="quick_unlock_warning">Предупреждение</string>
+    <string name="quick_unlock_warning_summary">Данная возможность обходит важный защитный механизм и плохо влияет на поддержку нескольких пользователей на устройстве. Используйте на свой риск</string>
+    <string name="unlock_quick_unlock_control_title">Быстрая разблокировка</string>
+    <string name="unlock_quick_unlock_control_summary">Автоматическая разблокировка при вводе правильного пароля или PIN-кода</string>
 </resources>
