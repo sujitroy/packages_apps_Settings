@@ -104,4 +104,10 @@
     <string name="recents_clear_all_location_bottom_center">Внизу по центру</string>
     <string name="systemui_recents_mem_display_title">Шкала использования ОЗУ</string>
     <string name="systemui_recents_mem_display_summary">Отображать шкалу использования ОЗУ в меню последних программ</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_label">Главное меню</string>
+    <string name="dashboard_conditions_title">Уведомления в главном меню</string>
+    <string name="summary_dashboard_conditions_enabled">Уведомления в главном меню включены</string>
+    <string name="summary_dashboard_conditions_disabled">Уведомления в главном меню выключены</string>
 </resources>

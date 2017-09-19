@@ -104,4 +104,10 @@
     <string name="recents_clear_all_location_bottom_center">Знизу по центру</string>
     <string name="systemui_recents_mem_display_title">Шкала використання ОЗП</string>
     <string name="systemui_recents_mem_display_summary">Показувати шкалу використання ОЗП в меню останніх програм</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_label">Головне меню</string>
+    <string name="dashboard_conditions_title">Сповіщення в головному меню</string>
+    <string name="summary_dashboard_conditions_enabled">Сповіщення в головному меню увімкнені</string>
+    <string name="summary_dashboard_conditions_disabled">Сповіщення в головному меню вимкнені</string>
 </resources>

@@ -112,4 +112,10 @@
     <string name="recents_clear_all_location_bottom_center">Bottom center</string>
     <string name="systemui_recents_mem_display_title">Memory bar</string>
     <string name="systemui_recents_mem_display_summary">Display memory bar in recents</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_label">Dashboard</string>
+    <string name="dashboard_conditions_title">Dashboard conditions</string>
+    <string name="summary_dashboard_conditions_enabled">Dashboard conditions are enabled</string>
+    <string name="summary_dashboard_conditions_disabled">Dashboard conditions are disabled</string>
 </resources>
