@@ -110,4 +110,7 @@
     <string name="dashboard_conditions_title">Сповіщення в головному меню</string>
     <string name="summary_dashboard_conditions_enabled">Сповіщення в головному меню увімкнені</string>
     <string name="summary_dashboard_conditions_disabled">Сповіщення в головному меню вимкнені</string>
+    <string name="dashboard_suggestions_title">Підказки в головному меню</string>
+    <string name="summary_dashboard_suggestions_enabled">Підказки в головному меню увімкнені</string>
+    <string name="summary_dashboard_suggestions_disabled">Підказки в головному меню вимкнені</string>
 </resources>
