@@ -102,4 +102,6 @@
     <string name="recents_clear_all_location_bottom_right">Знизу праворуч</string>
     <string name="recents_clear_all_location_bottom_left">Знизу ліворуч</string>
     <string name="recents_clear_all_location_bottom_center">Знизу по центру</string>
+    <string name="systemui_recents_mem_display_title">Шкала використання ОЗП</string>
+    <string name="systemui_recents_mem_display_summary">Показувати шкалу використання ОЗП в меню останніх програм</string>
 </resources>
