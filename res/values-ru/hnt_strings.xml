@@ -88,4 +88,18 @@
     <string name="quick_unlock_warning_summary">Данная возможность обходит важный защитный механизм и плохо влияет на поддержку нескольких пользователей на устройстве. Используйте на свой риск</string>
     <string name="unlock_quick_unlock_control_title">Быстрая разблокировка</string>
     <string name="unlock_quick_unlock_control_summary">Автоматическая разблокировка при вводе правильного пароля или PIN-кода</string>
+
+    <!-- Recents -->
+    <string name="recents_label">Меню последних программ</string>
+
+    <!-- Recents panel settings -->
+    <string name="show_clear_all_recents_button_title">Кнопка \"Очистить все\"</string>
+    <string name="show_clear_all_recents_button_summary">Показывать кнопку \"Очистить все\" в меню последних программ</string>
+    <string name="recents_clear_all_location_title">Расположение кнопки \"Очистить все\"</string>
+    <string name="recents_clear_all_location_top_right">Вверху справа</string>
+    <string name="recents_clear_all_location_top_left">Вверху слева</string>
+    <string name="recents_clear_all_location_top_center">Вверху по центру</string>
+    <string name="recents_clear_all_location_bottom_right">Внизу справа</string>
+    <string name="recents_clear_all_location_bottom_left">Внизу слева</string>
+    <string name="recents_clear_all_location_bottom_center">Внизу по центру</string>
 </resources>

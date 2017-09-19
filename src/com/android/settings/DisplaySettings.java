@@ -103,6 +103,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String AMBIENT_DOZE_AUTO_BRIGHTNESS = "ambient_doze_auto_brightness";
     private static final String AMBIENT_DOZE_CUSTOM_BRIGHTNESS = "ambient_doze_custom_brightness";
 
+    private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+
     private Preference mFontSizePref;
 
     private CustomSeekBarPreference mAmbientDozeCustomBrightness;
@@ -115,6 +117,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mTapToWakePreference;
     private SwitchPreference mAutoBrightnessPreference;
     private SwitchPreference mCameraGesturePreference;
+    private ListPreference mRecentsClearAllLocation;
 
     private ThemePreference mThemePreference;
 
@@ -307,6 +310,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             removePreference(AMBIENT_DOZE_CUSTOM_BRIGHTNESS);
             removePreference(AMBIENT_DOZE_AUTO_BRIGHTNESS);
         }
+
+        // clear all location
+        mRecentsClearAllLocation = (ListPreference) findPreference(RECENTS_CLEAR_ALL_LOCATION);
+        int location = Settings.System.getIntForUser(resolver,
+                Settings.System.RECENTS_CLEAR_ALL_LOCATION, 3, UserHandle.USER_CURRENT);
+        mRecentsClearAllLocation.setValue(String.valueOf(location));
+        mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
+        mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
 
         mThemePreference = (ThemePreference) findPreference(KEY_THEME);
         if (mThemePreference != null) {
@@ -537,6 +548,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             Settings.System.putIntForUser(getActivity().getContentResolver(),
                     Settings.System.AMBIENT_DOZE_AUTO_BRIGHTNESS, value ? 1 : 0, UserHandle.USER_CURRENT);
             mAmbientDozeCustomBrightness.setEnabled(!value);
+        }
+        if (preference == mRecentsClearAllLocation) {
+            int location = Integer.valueOf((String) objValue);
+            int index = mRecentsClearAllLocation.findIndexOfValue((String) objValue);
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.RECENTS_CLEAR_ALL_LOCATION, location, UserHandle.USER_CURRENT);
+            mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
+            return true;
         }
 
         if (mThemePreference != null) {
