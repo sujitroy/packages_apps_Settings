@@ -113,4 +113,9 @@
     <string name="dashboard_suggestions_title">Подсказки в главном меню</string>
     <string name="summary_dashboard_suggestions_enabled">Подсказки в главном меню включены</string>
     <string name="summary_dashboard_suggestions_disabled">Подсказки в главном меню выключены</string>
+
+    <!-- Menu label for reset the battery stats -->
+    <string name="menu_stats_reset">Сброс статистики</string>
+    <!-- Reset stats confirmation dialog's message -->
+    <string name="reset_stats_msg">История статистики батареи будет сброшена</string>
 </resources>
