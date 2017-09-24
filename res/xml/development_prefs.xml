@@ -263,7 +263,7 @@
             android:key="show_usb_mode_dialog"
             android:title="@string/usb_mode_dialog_show_title"
             android:summary="@string/usb_mode_dialog_show_summary"
-            android:defaultValue="true" />
+            android:defaultValue="false" />
 
         <SwitchPreference
             android:key="bluetooth_disable_absolute_volume"
