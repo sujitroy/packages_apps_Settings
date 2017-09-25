@@ -128,4 +128,8 @@
     <!-- MTP Dirty Hack -->
     <string name="enable_mtp_dirtyhack_title">MTP вместо Зарядки</string>
     <string name="enable_mtp_dirtyhack_summary">Включить MTP вместо Зарядки при подключении к ПК</string>
+
+    <!-- Force expanded notifications -->
+    <string name="force_expanded_notifications_title">Принудительно разворачивать уведомления</string>
+    <string name="force_expanded_notifications_summary">Доступно только для приложений, поддерживающих расширенные уведомления</string>
 </resources>
