@@ -132,4 +132,9 @@
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">Примусово розгортати сповіщення</string>
     <string name="force_expanded_notifications_summary">Доступно тільки для додатків, які підтримують розширені сповіщення</string>
+
+    <!-- Power menu on lock screen -->
+    <string name="power_category">Меню живлення</string>
+    <string name="powermenu_lockscreen_title">Меню живлення на екрані блокування</string>
+    <string name="powermenu_lockscreen_summary">Показувати меню живлення на екрані блокування</string>
 </resources>
