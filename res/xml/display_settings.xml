@@ -91,13 +91,6 @@
                 android:title="@string/doze_title"
                 android:summary="@string/doze_summary" />
 
-        <cyanogenmod.preference.SystemSettingSwitchPreference
-                android:key="ambient_display_show_battery"
-                android:title="@string/ambient_display_show_battery_title"
-                android:summary="@string/ambient_display_show_battery_summary"
-                android:dependency="doze"
-                android:defaultValue="true" />
-
         <cyanogenmod.preference.RemotePreference
                 android:key="doze_device_settings"
                 android:title="@string/doze_title"
@@ -106,17 +99,10 @@
             <intent android:action="org.cyanogenmod.settings.device.DOZE_SETTINGS" />
         </cyanogenmod.preference.RemotePreference>
 
-        <com.android.settings.hnt.CustomSeekBarPreference
-                android:key="ambient_doze_custom_brightness"
-                android:title="@string/ambient_doze_custom_brightness_title"
-                settings:max="255"
-                settings:units=""
-                android:persistent="false" />
-
-        <SwitchPreference
-                android:key="ambient_doze_auto_brightness"
-                android:title="@string/ambient_doze_auto_brightness_title"
-                android:summary="@string/ambient_doze_auto_brightness_summary" />
+        <PreferenceScreen
+                android:key="doze_fragment"
+                android:title="@string/doze_settings_title"
+                android:fragment="com.android.settings.hnt.AmbientSettings" />
 
         <cyanogenmod.preference.CMGlobalSettingSwitchPreference
                 android:key="wake_when_plugged_or_unplugged"

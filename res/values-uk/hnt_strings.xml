@@ -137,4 +137,7 @@
     <string name="power_category">Меню живлення</string>
     <string name="powermenu_lockscreen_title">Меню живлення на екрані блокування</string>
     <string name="powermenu_lockscreen_summary">Показувати меню живлення на екрані блокування</string>
+
+    <string name="doze_settings">Налаштування режиму Doze</string>
+    <string name="doze_settings_title">Налаштування Активації екрану</string>
 </resources>
