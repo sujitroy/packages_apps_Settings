@@ -148,4 +148,7 @@
 
     <string name="doze_settings">Doze settings</string>
     <string name="doze_settings_title">Ambient display settings</string>
+
+    <!-- Screenshot sound -->
+    <string name="screenshot_sound_title">Screenshot sound</string>
 </resources>

@@ -140,4 +140,7 @@
 
     <string name="doze_settings">Налаштування режиму Doze</string>
     <string name="doze_settings_title">Налаштування Активації екрану</string>
+
+    <!-- Screenshot sound -->
+    <string name="screenshot_sound_title">Звук скріншота</string>
 </resources>
