@@ -418,4 +418,7 @@
 	
     <string name="status_deep_sleep">(Deep sleep: %1$d%2$s)</string>
     <string name="phone_up_time">Phone up time:</string>
+
+    <!-- Screenshot sound -->
+    <string name="screenshot_sound_title">Screenshot sound</string>
 </resources>
