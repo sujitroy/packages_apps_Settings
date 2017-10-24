@@ -150,4 +150,8 @@
     <!-- Disable FC notifications -->
     <string name="disable_fc_notifications_title">Вимкнути сповіщення про помилки</string>
     <string name="disable_fc_notifications_summary">Приховати всі сповіщення про помилки</string>
+
+    <!-- Camera sound -->
+    <string name="camera_sounds_title">Звук затвору камери</string>
+    <string name="camera_sounds_summary">Вимкнення може не працювати на сторонніх додатках камери і в режимі HDR+</string>
 </resources>
