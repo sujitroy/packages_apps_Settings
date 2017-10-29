@@ -159,4 +159,12 @@
     <string name="screenshot_type_title">Тип скріншоту</string>
     <string name="screenshot_type_fullscreen">Повноекранний скріншот</string>
     <string name="screenshot_type_partial">Вибір області екрану для часткового скріншоту</string>
+
+    <string name="hal3_enabled_title">Увімкнення API2</string>
+    <string name="hal3_enabled_summary">Для застосування змін необхідне перезавантаження</string>
+
+    <string name="dialog_reboot_required">Потрібне перезавантаження</string>
+    <string name="dialog_reboot_required_summary">Перезавантаження необхідне для того, щоб зміни набрали сили!</string>
+    <string name="reboot_now">Перезавантажити зараз</string>
+    <string name="reboot_later">Перезавантажити пізніше</string>
 </resources>

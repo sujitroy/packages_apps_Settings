@@ -167,4 +167,12 @@
     <string name="screenshot_type_title">Screenshot type</string>
     <string name="screenshot_type_fullscreen">Take fullscreen screenshots</string>
     <string name="screenshot_type_partial">Drag selection on the area you want to take as a screenshot</string>
+
+    <string name="hal3_enabled_title">Enable API2</string>
+    <string name="hal3_enabled_summary">Reboot is required for changes to take effect</string>
+
+    <string name="dialog_reboot_required">Reboot required</string>
+    <string name="dialog_reboot_required_summary">A reboot is required for the changes to take effect!</string>
+    <string name="reboot_now">Reboot now</string>
+    <string name="reboot_later">Reboot later</string>
 </resources>
