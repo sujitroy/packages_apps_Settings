@@ -495,4 +495,9 @@
          android:summary="@string/hal3_enabled_summary"
          android:defaultValue="false" />
 
+     <SwitchPreference
+         android:key="google_camera_hack_enabled"
+         android:title="@string/googlecamera_hack_enabled_title"
+         android:defaultValue="false" />
+
 </PreferenceScreen>

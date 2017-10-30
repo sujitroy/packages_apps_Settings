@@ -167,4 +167,6 @@
     <string name="dialog_reboot_required_summary">Перезагрузка необходима для того, чтобы изменения вступили в силу!</string>
     <string name="reboot_now">Перезагрузить сейчас</string>
     <string name="reboot_later">Перезагрузить позже</string>
+
+    <string name="googlecamera_hack_enabled_title">Разрешить Google Camera на неподдерживаемых устройствах</string>
 </resources>

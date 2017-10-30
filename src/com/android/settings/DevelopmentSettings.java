@@ -267,6 +267,9 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
     private static final String HAL3_ENABLED = "hal3_enabled";
     private static final String PROP_HAL3_ENABLED = "persist.camera.HAL3.enabled";
 
+    private static final String GOOGLE_CAMERA_HACK_ENABLED = "google_camera_hack_enabled";
+    private static final String PROP_GOOGLE_CAMERA_HACK_ENABLED = "persist.camera.GC.hack";
+
     private IWindowManager mWindowManager;
     private IBackupManager mBackupManager;
     private IWebViewUpdateService mWebViewUpdateService;
@@ -387,6 +390,8 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
     private SwitchPreference mHAL3Enabled;
 
     private static FragmentManager mFragmentManager;
+
+    private SwitchPreference mGoogleCameraEnabled;
 
     public DevelopmentSettings() {
         super(UserManager.DISALLOW_DEBUGGING_FEATURES);
@@ -638,6 +643,10 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
         mHAL3Enabled = (SwitchPreference) findPreference(HAL3_ENABLED);
         mHAL3Enabled.setChecked(SystemProperties.getBoolean(PROP_HAL3_ENABLED, false));
         mHAL3Enabled.setOnPreferenceChangeListener(this);
+
+        mGoogleCameraEnabled = (SwitchPreference) findPreference(GOOGLE_CAMERA_HACK_ENABLED);
+        mGoogleCameraEnabled.setChecked(SystemProperties.getBoolean(PROP_GOOGLE_CAMERA_HACK_ENABLED, false));
+        mGoogleCameraEnabled.setOnPreferenceChangeListener(this);
     }
 
     private ListPreference addListPreference(String prefKey) {
@@ -2501,6 +2510,9 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
         } else if (HAL3_ENABLED.equals(preference.getKey())) {
             SystemProperties.set(PROP_HAL3_ENABLED, (Boolean) newValue ? "1" : "0");
             confirmRebootChange();
+            return true;
+        } else if (GOOGLE_CAMERA_HACK_ENABLED.equals(preference.getKey())) {
+            SystemProperties.set(PROP_GOOGLE_CAMERA_HACK_ENABLED, (Boolean) newValue ? "1" : "0");
             return true;
         }
         return false;
