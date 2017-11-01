@@ -47,6 +47,7 @@ import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.TwoStatePreference;
 import android.text.TextUtils;
@@ -86,6 +87,8 @@ public class SoundSettings extends SettingsPreferenceFragment implements Indexab
     private static final String KEY_WIFI_DISPLAY = "wifi_display";
     private static final String KEY_INCREASING_RING_VOLUME = "increasing_ring_volume";
     private static final String KEY_ZEN_MODE = "zen_mode";
+
+    private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
 
     private static final String SELECTED_PREFERENCE_KEY = "selected_preference";
     private static final int REQUEST_CODE = 200;
@@ -181,6 +184,13 @@ public class SoundSettings extends SettingsPreferenceFragment implements Indexab
             if (!TextUtils.isEmpty(selectedPreference)) {
                 mRequestPreference = (RingtonePreference) findPreference(selectedPreference);
             }
+        }
+
+        PreferenceScreen prefScreen = getPreferenceScreen();
+
+        PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
+        if (!Utils.isVoiceCapable(getActivity())) {
+            prefScreen.removePreference(incallVibCategory);
         }
     }
 

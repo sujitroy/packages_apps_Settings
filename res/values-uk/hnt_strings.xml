@@ -169,4 +169,10 @@
     <string name="reboot_later">Перезавантажити пізніше</string>
 
     <string name="googlecamera_hack_enabled_title">Дозволити Google Camera на непідтримуваних пристроях</string>
+
+    <!-- Incall vibrate options -->
+    <string name="incall_vibration_category">Налаштування вібрації під час виклику</string>
+    <string name="incall_vibrate_connect_title">Вібрувати при відповіді</string>
+    <string name="incall_vibrate_call_wait_title">Вібрувати при очікуванні виклику</string>
+    <string name="incall_vibrate_disconnect_title">Вібрувати при завершені</string>
 </resources>
