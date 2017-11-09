@@ -45,13 +45,13 @@
             android:title="@string/unlock_quick_unlock_control_title"
             android:summary="@string/unlock_quick_unlock_control_summary" />
 
-        <SwitchPreference
-            android:key="fp_unlock_keystore"
-            android:title="@string/fp_unlock_keystore_title"
-            android:summary="@string/fp_unlock_pin_summary"
-            android:persistent="false" />
-
     </PreferenceCategory>
+
+    <SwitchPreference
+        android:key="fp_unlock_keystore"
+        android:title="@string/fp_unlock_keystore_title"
+        android:summary="@string/fp_unlock_pin_summary"
+        android:persistent="false" />
 
     <!-- Fingerprint authentication vibration -->
     <SwitchPreference

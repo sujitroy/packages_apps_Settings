@@ -34,13 +34,13 @@
             android:summary="@string/fp_unlock_pattern_summary"
             android:persistent="false" />
 
-        <!-- Fingerprint authentication vibration -->
-        <SwitchPreference
-            android:key="fingerprint_success_vib"
-            android:title="@string/fprint_sucess_vib_title"
-            android:summary="@string/fprint_sucess_vib_summary"
-            android:persistent="false" />
-
     </PreferenceCategory>
+
+    <!-- Fingerprint authentication vibration -->
+    <SwitchPreference
+        android:key="fingerprint_success_vib"
+        android:title="@string/fprint_sucess_vib_title"
+        android:summary="@string/fprint_sucess_vib_summary"
+        android:persistent="false" />
 
 </PreferenceScreen>

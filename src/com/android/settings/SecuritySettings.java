@@ -150,6 +150,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
 
     private SwitchPreference mFpKeystore;
     private SwitchPreference mFingerprintVib;
+    private FingerprintManager mFingerprintManager;
 
     private KeyStore mKeyStore;
     private RestrictedPreference mResetCredentials;
@@ -244,6 +245,8 @@ public class SecuritySettings extends SettingsPreferenceFragment
         }
         addPreferencesFromResource(R.xml.security_settings);
         root = getPreferenceScreen();
+
+        mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
 
         // Add options for lock/unlock screen
         final int resid = getResIdForLockUnlockScreen(getActivity(), mLockPatternUtils,
@@ -382,29 +385,25 @@ public class SecuritySettings extends SettingsPreferenceFragment
                     getResources().getString(R.string.switch_on_text));
         }
 
-        if (mLockPatternUtils.isSecure(MY_USER_ID)) {
-            FingerprintManager fpm =
-                    (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
-            mFpKeystore = (SwitchPreference) findPreference(FP_UNLOCK_KEYSTORE);
-            if (fpm != null && fpm.isHardwareDetected()){
+        mFpKeystore = (SwitchPreference) findPreference(FP_UNLOCK_KEYSTORE);
+        if (mFpKeystore !=null) {
+            if (mFingerprintManager.isHardwareDetected()){
                 mFpKeystore.setChecked((Settings.System.getInt(getContentResolver(),
                         Settings.System.FP_UNLOCK_KEYSTORE, 0) == 1));
                 mFpKeystore.setOnPreferenceChangeListener(this);
             } else {
-                securityCategory.removePreference(mFpKeystore);
+                root.removePreference(mFpKeystore);
             }
         }
 
-        FingerprintManager fpm =
-                (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (SwitchPreference) findPreference(FINGERPRINT_VIB);
         if (mFingerprintVib !=null) {
-            if (fpm != null && fpm.isHardwareDetected()){
+            if (mFingerprintManager.isHardwareDetected()){
                 mFingerprintVib.setChecked((Settings.System.getInt(getContentResolver(),
                         Settings.System.FINGERPRINT_SUCCESS_VIB, 1) == 1));
                 mFingerprintVib.setOnPreferenceChangeListener(this);
             } else {
-                securityCategory.removePreference(mFingerprintVib);
+                root.removePreference(mFingerprintVib);
             }
         }
 
