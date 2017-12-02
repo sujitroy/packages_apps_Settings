@@ -58,8 +58,8 @@
     <!-- Phone info shortcut -->
     <string name="device_info_title">Phone info</string>
 
-    <string name="ambient_display_show_battery_title">Статус батареи</string>
-    <string name="ambient_display_show_battery_summary">Показывать значок батареи во время пульсации</string>
+    <string name="ambient_display_show_battery_title">Battery Status</string>
+    <string name="ambient_display_show_battery_summary">Show battery indicator during pulse</string>
 
     <string name="no_sim_cluster_switch_title">No sim network hide</string>
     <string name="no_sim_cluster_switch_summary">Hide the network bar if the subscription of sim is inactive and disabled. If sim is not disabled, this switch will not work</string>
