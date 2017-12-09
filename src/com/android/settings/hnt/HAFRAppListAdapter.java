@@ -4,11 +4,16 @@ package com.android.settings.hnt;
 import java.util.LinkedList;
 import java.util.Map;
 
+import android.app.ThemeManager;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
+import android.graphics.PorterDuff;
 import android.os.Handler;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -104,16 +109,26 @@ public abstract class HAFRAppListAdapter extends BaseAdapter {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
+        final int themeMode = Settings.Secure.getInt(mContext.getContentResolver(),
+            Settings.Secure.THEME_PRIMARY_COLOR, 0);
         ViewHolder holder;
         if (convertView != null) {
             holder = (ViewHolder) convertView.getTag();
         } else {
             convertView = mLayoutInflater.inflate(R.layout.view_package_list, parent, false);
             holder = new ViewHolder();
+            ImageButton RemoveIcon = (ImageButton) convertView.findViewById(R.id.removeButton);
+            if (!ThemeManager.isOverlayEnabled()) {
+                if (themeMode == 1 || themeMode == 3) {
+                    RemoveIcon.setColorFilter(Color.parseColor("#FFFFFF"), PorterDuff.Mode.SRC_ATOP);
+                } else {
+                    RemoveIcon.clearColorFilter();
+                }
+            }
             holder.name = (TextView) convertView.findViewById(android.R.id.title);
             holder.icon = (ImageView) convertView.findViewById(android.R.id.icon);
             holder.pkg = (TextView) convertView.findViewById(android.R.id.message);
-            holder.remove = (ImageButton) convertView.findViewById(R.id.removeButton);
+            holder.remove = RemoveIcon;
             convertView.setTag(holder);
         }
         final PackageItem appInfo = getItem(position);

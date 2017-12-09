@@ -11,10 +11,15 @@ import com.android.settings.hnt.HAFRAppChooserAdapter.AppItem;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.IThemeCallback;
+import android.app.ThemeManager;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.Menu;
@@ -38,9 +43,42 @@ public class HAFRAppListActivity extends Activity {
     ArrayList<String> excludeFromRecentsList;
     public static final String KEY_PREFERENCE_APPS = "hide_recents_apps_pref";
 
+    private int mTheme;
+    private ThemeManager mThemeManager;
+
+    private final IThemeCallback mThemeCallback = new IThemeCallback.Stub() {
+
+        @Override
+        public void onThemeChanged(int themeMode, int color) {
+            onCallbackAdded(themeMode, color);
+            HAFRAppListActivity.this.runOnUiThread(() -> {
+                HAFRAppListActivity.this.recreate();
+            });
+        }
+
+        @Override
+        public void onCallbackAdded(int themeMode, int color) {
+            mTheme = color;
+        }
+    };
+
     @Override
     @SuppressLint("WorldReadableFiles")
     protected void onCreate(Bundle savedInstanceState) {
+        final int themeMode = Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.THEME_PRIMARY_COLOR, 0);
+        final int accentColor = Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.THEME_ACCENT_COLOR, 0);
+        mThemeManager = (ThemeManager) getSystemService(Context.THEME_SERVICE);
+        if (mThemeManager != null) {
+            mThemeManager.addCallback(mThemeCallback);
+        }
+        if (themeMode != 0 || accentColor != 0) {
+            getTheme().applyStyle(mTheme, true);
+        }
+        if (themeMode == 2) {
+            getTheme().applyStyle(R.style.settings_pixel_theme, true);
+        }
         super.onCreate(savedInstanceState);
         mPref = getSharedPreferences(KEY_PREFERENCE_APPS, MODE_PRIVATE);
         loadList();
