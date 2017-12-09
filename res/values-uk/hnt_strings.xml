@@ -237,4 +237,9 @@
     <string name="blurred_radius_summary">Ступінь розмиття</string>
     <string name="blur_cat_notice">Примітка</string>
     <string name="blur_cat_notice_summary">Розмиття вимкнено під час перегляду на екрані блокування! Працюють тільки напівпрозорі сповіщення!</string>
+
+    <!-- Hide Apps from Recents -->
+    <string name="hide_apps_from_recents_title">Приховані додатки</string>
+    <string name="hide_from_recents_add_app">Додати додаток</string>
+    <string name="hide_apps_from_recents_summary">Виберіть додатки, які будуть виключені з панелі недавніх.</string>
 </resources>
