@@ -19,6 +19,7 @@ package com.android.settings.applications;
 
 import android.app.Activity;
 import android.app.AppOpsManager;
+import android.app.ThemeManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -28,8 +29,12 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.PermissionGroupInfo;
 import android.content.pm.PermissionInfo;
 import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
@@ -167,6 +172,9 @@ public class AppOpsDetails extends SettingsPreferenceFragment {
             return false;
         }
 
+        final int themeMode = Settings.Secure.getInt(getContext().getContentResolver(),
+            Settings.Secure.THEME_PRIMARY_COLOR, 0);
+
         mPreferenceScreen.removeAll();
         setAppHeader(mPackageInfo);
 
@@ -192,6 +200,14 @@ public class AppOpsDetails extends SettingsPreferenceFragment {
                 Drawable icon = getIconByPermission(perm);
                 if (icon == null && op != 0 && OP_ICONS.containsKey(op)) {
                     icon = getActivity().getDrawable(OP_ICONS.get(op));
+                }
+
+                if (!ThemeManager.isOverlayEnabled()) {
+                    if (themeMode == 1 || themeMode == 3) {
+                        icon.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP);
+                    } else {
+                        icon.clearColorFilter();
+                    }
                 }
 
                 final AppOpsManager.OpEntry firstOp = entry.getOpEntry(0);
