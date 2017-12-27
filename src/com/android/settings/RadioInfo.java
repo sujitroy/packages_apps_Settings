@@ -19,7 +19,10 @@ package com.android.settings;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.IThemeCallback;
+import android.app.ThemeManager;
 import android.app.QueuedWork;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -30,7 +33,9 @@ import android.net.Uri;
 import android.os.AsyncResult;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
+import android.provider.Settings;
 import android.telephony.CellInfo;
 import android.telephony.CellInfoCdma;
 import android.telephony.CellInfoGsm;
@@ -88,6 +93,9 @@ import java.util.List;
 
 public class RadioInfo extends Activity {
     private static final String TAG = "RadioInfo";
+
+    private int mTheme;
+    private ThemeManager mThemeManager;
 
     private static final String[] mPreferredNetworkLabels = {
             "WCDMA preferred",
@@ -343,8 +351,35 @@ public class RadioInfo extends Activity {
         }
     };
 
+    private final IThemeCallback mThemeCallback = new IThemeCallback.Stub() {
+
+        @Override
+        public void onThemeChanged(int themeMode, int color) {
+            onCallbackAdded(themeMode, color);
+            RadioInfo.this.runOnUiThread(() -> {
+                RadioInfo.this.recreate();
+            });
+        }
+
+        @Override
+        public void onCallbackAdded(int themeMode, int color) {
+            mTheme = color;
+        }
+    };
+
     @Override
     public void onCreate(Bundle icicle) {
+        final int themeMode = Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.THEME_PRIMARY_COLOR, 0);
+        final int accentColor = Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.THEME_ACCENT_COLOR, 0);
+        mThemeManager = (ThemeManager) getSystemService(Context.THEME_SERVICE);
+        if (mThemeManager != null) {
+            mThemeManager.addCallback(mThemeCallback);
+        }
+        if (themeMode != 0 || accentColor != 0) {
+            getTheme().applyStyle(mTheme, true);
+        }
         super.onCreate(icicle);
         if (!android.os.Process.myUserHandle().isSystem()) {
             Log.e(TAG, "Not run from system user, don't do anything.");

@@ -2,11 +2,16 @@ package com.android.settings;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.IThemeCallback;
+import android.app.ThemeManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.AsyncResult;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -68,8 +73,44 @@ public class BandMode extends Activity {
 
     private Phone mPhone = null;
 
+    private int mTheme;
+    private ThemeManager mThemeManager;
+
+    private final IThemeCallback mThemeCallback = new IThemeCallback.Stub() {
+
+        @Override
+        public void onThemeChanged(int themeMode, int color) {
+            onCallbackAdded(themeMode, color);
+            BandMode.this.runOnUiThread(() -> {
+                BandMode.this.recreate();
+            });
+        }
+
+        @Override
+        public void onCallbackAdded(int themeMode, int color) {
+            mTheme = color;
+        }
+    };
+
     @Override
     protected void onCreate(Bundle icicle) {
+        final int themeMode = Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.THEME_PRIMARY_COLOR, 0);
+        final int accentColor = Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.THEME_ACCENT_COLOR, 0);
+        mThemeManager = (ThemeManager) getSystemService(Context.THEME_SERVICE);
+        if (mThemeManager != null) {
+            mThemeManager.addCallback(mThemeCallback);
+        }
+        if (themeMode != 0 || accentColor != 0) {
+            getTheme().applyStyle(mTheme, true);
+        }
+        if (themeMode == 1) {
+            getTheme().applyStyle(R.style.Theme_Custom_Grey_Dialog_Alert, true);
+        }
+        if (themeMode == 3) {
+            getTheme().applyStyle(R.style.Theme_Custom_Dark_Dialog_Alert, true);
+        }
         super.onCreate(icicle);
 
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
