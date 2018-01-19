@@ -476,7 +476,7 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
                 } else {
                     mSwitch.setEnabled(true);
                 }
-                setChecked(isSlotProvisioned(mSlotId));
+                setChecked(getProvisionStatus(mSlotId) == PROVISIONED);
             }
         }
 
