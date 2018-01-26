@@ -66,6 +66,7 @@ import org.codeaurora.internal.TelephonyExtUtils.ProvisioningChangedListener;
 import static org.codeaurora.internal.TelephonyExtUtils.PROVISIONED;
 import static org.codeaurora.internal.TelephonyExtUtils.NOT_PROVISIONED;
 
+import java.lang.NoClassDefFoundError;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -121,6 +122,12 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
         mSubscriptionManager = SubscriptionManager.from(getActivity());
         final TelephonyManager tm =
                 (TelephonyManager) getActivity().getSystemService(Context.TELEPHONY_SERVICE);
+        try {
+            mExtTelephony = IExtTelephony.Stub.asInterface(ServiceManager.getService("extphone"));
+        } catch (NoClassDefFoundError ex) {
+            // ignore, device does not compile telephony-ext.
+        }
+
         addPreferencesFromResource(R.xml.sim_settings);
 
         mNumSlots = tm.getSimCount();
