@@ -194,4 +194,6 @@
     <string name="app_notification_sound_timeout_value_5_minutes">5 хвилин</string>
     <string name="app_notification_sound_timeout_value_15_minutes">10 хвилин</string>
     <string name="app_notification_sound_timeout_value_30_minutes">30 хвилин</string>
+    <string name="face_auto_unlock_title">Автоматичне розблокування обличчям</string>
+    <string name="face_auto_unlock_summary">Прибрати екран блокування після розблокування обличчям</string>
 </resources>
