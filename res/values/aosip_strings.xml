@@ -336,4 +336,8 @@
     <string name="battery_saver_color_title">Warning color</string>
     <string name="battery_saver_color_summary">Enable colored status - navigation bars when battery saver is activated</string>
 
+    <!-- Font picker -->
+    <string name="font_picker_title">Font</string>
+
+
 </resources>
