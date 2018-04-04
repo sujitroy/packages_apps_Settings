@@ -602,7 +602,6 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
             if (!mIsChecked) {
                 if (getNumOfSubsProvisioned() > 1) {
                     logd("More than one sub is active, Deactivation possible.");
-                    //showAlertDialog(CONFIRM_ALERT_DLG_ID, 0);
                     sendUiccProvisioningRequest();
                 } else {
                     logd("Only one sub is active. Deactivation not possible.");
