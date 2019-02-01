@@ -415,4 +415,7 @@
     <!-- Face unlock toggle -->
     <string name="face_auto_unlock_title">Face auto unlock</string>
     <string name="face_auto_unlock_summary">Dismiss lockscreen after face unlocking</string>
+	
+    <string name="status_deep_sleep">(Deep sleep: %1$d%2$s)</string>
+    <string name="phone_up_time">Phone up time:</string>
 </resources>
